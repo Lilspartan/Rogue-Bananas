@@ -1,16 +1,116 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'true-lies';
+    src: url('../public/truelies.ttf');
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+    font-family: 'nats';
+    src: url('../public/NATS.ttf');
 }
 
 * {
-  box-sizing: border-box;
+    font-family: 'nats';
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: overlay
+}
+
+.tl-font {
+    font-family: 'true-lies';
+}
+
+.hero-text:not(.tl-font) {
+    font-size: 96px;
+    height: 6rem;
+}
+
+.hero-text.tl-font {
+    font-size: 70px;
+}
+
+#hero2, #hero3 {
+    display: inline;
+}
+
+.navbar {
+    transition: transform 0.4s ease-in-out;
+}
+
+.is-hidden {
+    transform: translateY(-100%);
+}
+
+.is-visible {
+    transform: translateY(0%);
+}
+
+.navbar-hide {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;  
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+h2 {
+    font-size: 36px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00000050;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00000080;
+}
+
+.button {
+    box-shadow: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.button:active {
+    box-shadow: 5px 5px 0px 0px #000000;
 }
