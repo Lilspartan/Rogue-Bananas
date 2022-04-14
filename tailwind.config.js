@@ -8,6 +8,8 @@ module.exports = {
       colors: {
         "primary-yellow": "#FFED50",
         "primary-gray": "#323232",
+        "primary-blue": "#20A4F3",
+        "primary-green": "#06A77D",
         "twitter-blue": "#1DA1F2",
         "twitch-purple": "#9146FF",
         "discord-blurple": "#5865F2",

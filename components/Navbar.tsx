@@ -10,9 +10,6 @@ const Navbar = () => {
         const handleScroll = () => {
             var currentScroll = window.scrollY;
     
-            console.log(currentScroll, previousScroll)
-            console.log(window.document.body.offsetHeight - window.innerHeight)
-    
             if (currentScroll < 100) {
                 setNavbarVisible(true);
             } else if (currentScroll > 0 && currentScroll < window.document.body.offsetHeight - window.innerHeight) {
@@ -33,7 +30,7 @@ const Navbar = () => {
             <nav className = {classnames([
                 "navbar", "fixed", "top-0", "right-0", "left-0", "z-50", "p-0", (navbarVisible ? "is-visible" : "is-hidden")
             ])} role="navigation">
-                <div className="container">
+                <div className="container hidden lg:block">
                     <div className="flex flex-row align-items-center justify-around">
                         <div className="flex">
                             <Link href = "/#main">
@@ -47,7 +44,7 @@ const Navbar = () => {
                         <div className="flex">
                             <ul className="navbar-nav flex flex-row justify-end flex-wrap align-items-center content-center justify-self-end mr-lg-4 mr-xl-0">
                                 <ListItem link = "/#events">EVENTS</ListItem>
-                                <ListItem link = "/#communitites">COMMUNITIES</ListItem>
+                                <ListItem link = "/#communities">COMMUNITIES</ListItem>
                                 <ListItem link = "/#about">ABOUT US</ListItem>
                                 <ListItem link = "/">REGISTER</ListItem>
                             </ul>
